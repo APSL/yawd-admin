@@ -89,6 +89,10 @@ fieldset {
 	color: #555;
 }
 
+.page-header h1 select {
+	width:55px;
+}
+
 .page-header .grey {
 	color: #999;
 }
