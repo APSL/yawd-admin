@@ -1,6 +1,8 @@
 {% extends "admin/base_site.html" %}{% load admin_list i18n admin_static yawdadmin_tags yawdadmin_filters admin_urls %}
 
-{% block extrastyle %}{{ block.super }}{% if cl.has_filters %}
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "yawd-admin/css/fancybox/jquery.fancybox.css" %}" />
+{% if cl.has_filters %}
 		<link rel="stylesheet" type="text/css" href="{% static 'yawd-admin/css/select2/select2.css' %}" />{% endif %}{% if not actions_on_top and not actions_on_bottom %}
 		<style>
 			#changelist table thead th:first-child { width: inherit; }
@@ -8,6 +10,7 @@
 
 {% block extrahead %}{{ block.super }}{% if cl.formset or action_form %}{% url 'admin:jsi18n' as jsi18nurl %}
 		<script src="{{ jsi18nurl|default:'../../jsi18n/' }}"></script>{% endif %}
+		<script src="{% static "yawd-admin/js/jquery.fancybox.pack.js" %}"></script>
 		<script src="{% static 'yawd-admin/js/yawd-admin.js' %}"></script>{% if cl.has_filters %}
 		<script src="{% static 'yawd-admin/css/select2/select2.min.js' %}"></script>{% get_current_language as LANGUAGE_CODE %}
 		<script src="{% static 'yawd-admin/css/select2/select2_locale_'|add:LANGUAGE_CODE|add:'.js' %}"></script>
