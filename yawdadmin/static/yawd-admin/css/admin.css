@@ -2828,9 +2828,22 @@ div.inline-wrapper div.tabular td {
 }
 
 div.inline-wrapper div.tabular td input {
-    margin-top:42px;
+    /*margin-top:42px;*/
 }
 
 div.inline-wrapper div.tabular td.ui-tabs input {
     margin-top:0px;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a, 
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+    background: -moz-linear-gradient(center top , #50AEDD 0%, #08C 100%) 
+    repeat scroll 0% 0% transparent !important;
+    color: #FFF;
+}
+
+.ui-tabs .ui-tabs-nav a {
+    margin-right:3px;
+    width:15px;
+    text-align:center;
 }
