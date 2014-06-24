@@ -222,6 +222,7 @@ class SortableModelAdmin(admin.ModelAdmin):
     def reorder(self, request):
         if not request.POST.get('data', None):
             return HttpResponse(json.dumps({'message': _('No data sent with the request')}))
+        
         try:
             self._reorder(json.loads(request.POST.get('data', None)), request) 
         except:
